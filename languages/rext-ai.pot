@@ -1,0 +1,588 @@
+# Copyright (C) 2024 Rext AI
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Rext AI Publisher 1.0.0\n"
+"Report-Msgid-Bugs-To: https://rext.ai/support\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-01-01T00:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI\n"
+"X-Domain: rext-ai\n"
+
+#: rext-ai.php:79
+msgid "Rext AI requires PHP %s or higher. Your current version is %s."
+msgstr ""
+
+#: rext-ai.php:94
+msgid "Rext AI requires WordPress %s or higher. Your current version is %s."
+msgstr ""
+
+#: includes/class-rext-ai-auth.php:46
+msgid "Rext AI integration is currently disabled."
+msgstr ""
+
+#: includes/class-rext-ai-auth.php:56
+msgid "API key is required."
+msgstr ""
+
+#: includes/class-rext-ai-auth.php:67
+msgid "Invalid API key."
+msgstr ""
+
+#: includes/class-rext-ai-auth.php:111
+msgid "Rate limit exceeded. Please try again later."
+msgstr ""
+
+#: includes/class-rext-ai-auth.php:134
+msgid "Request timestamp is required when using signatures."
+msgstr ""
+
+#: includes/class-rext-ai-auth.php:151
+msgid "Request timestamp has expired."
+msgstr ""
+
+#: includes/class-rext-ai-auth.php:166
+msgid "Invalid request signature."
+msgstr ""
+
+#: includes/class-rext-ai-auth.php:221
+msgid "Permission denied: %s is not enabled."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:295
+msgid "Connection established successfully."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:308
+msgid "Connection is active."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:323
+msgid "Disconnected successfully. API key has been regenerated."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:369
+msgid "Post created successfully."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:414
+msgid "Post updated successfully."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:435
+msgid "Post permanently deleted."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:435
+msgid "Post moved to trash."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:468
+msgid "Media uploaded successfully."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:491
+msgid "Media sideloaded successfully."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:551
+msgid "Category name is required."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:567
+msgid "Category already exists."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:584
+msgid "Category created successfully."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:620
+msgid "Tag name is required."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:634
+msgid "Tag already exists."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:651
+msgid "Tag created successfully."
+msgstr ""
+
+#: includes/class-rext-ai-api.php:723
+msgid "SEO meta updated successfully."
+msgstr ""
+
+#: includes/class-rext-ai-posts.php:39
+msgid "Post title is required."
+msgstr ""
+
+#: includes/class-rext-ai-posts.php:152
+msgid "Post not found."
+msgstr ""
+
+#: includes/class-rext-ai-posts.php:246
+msgid "Failed to delete post."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:66
+msgid "No file provided."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:108
+msgid "URL is required."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:115
+msgid "Invalid URL provided."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:146
+msgid "File type not allowed."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:220
+msgid "Media not found."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:301
+msgid "File exceeds server upload limit."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:302
+msgid "File exceeds form upload limit."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:303
+msgid "File was only partially uploaded."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:304
+msgid "No file was uploaded."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:305
+msgid "Missing temporary folder."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:306
+msgid "Failed to write file to disk."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:307
+msgid "File upload stopped by extension."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:312
+msgid "Unknown upload error."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:322
+msgid "File size exceeds 50MB limit."
+msgstr ""
+
+#: includes/class-rext-ai-media.php:376
+msgid "Failed to delete media."
+msgstr ""
+
+#: includes/class-rext-ai-seo.php:155
+msgid "No supported SEO plugin detected."
+msgstr ""
+
+#: includes/class-rext-ai-webhooks.php:119
+msgid "Webhook URL is required."
+msgstr ""
+
+#: includes/class-rext-ai-webhooks.php:127
+msgid "Invalid webhook URL."
+msgstr ""
+
+#: includes/class-rext-ai-webhooks.php:136
+msgid "This is a test webhook from Rext AI Publisher."
+msgstr ""
+
+#: includes/class-rext-ai-webhooks.php:154
+msgid "Webhook test successful!"
+msgstr ""
+
+#: includes/class-rext-ai-webhooks.php:171
+msgid "API key was regenerated. Please update your integration."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:47
+#: admin/class-rext-ai-admin.php:56
+msgid "Rext AI"
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:56
+msgid "Settings"
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:65
+msgid "Activity Log"
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:74
+msgid "Published Content"
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:117
+msgid "Are you sure you want to regenerate the API key? This will invalidate the current key and disconnect any active integrations."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:118
+msgid "Regenerating..."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:119
+msgid "API key regenerated successfully!"
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:120
+msgid "Failed to regenerate API key."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:121
+msgid "Copied to clipboard!"
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:122
+msgid "Failed to copy."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:123
+msgid "Testing..."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:124
+msgid "Webhook test successful!"
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:125
+msgid "Webhook test failed."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:126
+msgid "Exporting..."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:127
+msgid "Are you sure you want to clear all logs? This cannot be undone."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:195
+msgid "Settings saved."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:209
+msgid "Permission denied."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:217
+msgid "API key regenerated successfully."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:232
+msgid "Webhook URL is required."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:273
+msgid "Logs cleared successfully."
+msgstr ""
+
+#: admin/class-rext-ai-admin.php:293
+msgid "For security, we recommend using HTTPS for API communication."
+msgstr ""
+
+#: admin/views/settings.php:65
+msgid "Connected"
+msgstr ""
+
+#: admin/views/settings.php:68
+msgid "Last activity: %s"
+msgstr ""
+
+#: admin/views/settings.php:73
+msgid "Not Connected"
+msgstr ""
+
+#: admin/views/settings.php:74
+msgid "Waiting for connection from Rext AI"
+msgstr ""
+
+#: admin/views/settings.php:78
+msgid "%d posts"
+msgstr ""
+
+#: admin/views/settings.php:79
+msgid "%d logs today"
+msgstr ""
+
+#: admin/views/settings.php:88
+msgid "API Configuration"
+msgstr ""
+
+#: admin/views/settings.php:92
+msgid "Enable Integration"
+msgstr ""
+
+#: admin/views/settings.php:98
+msgid "Enable or disable the Rext AI integration."
+msgstr ""
+
+#: admin/views/settings.php:104
+msgid "Site URL"
+msgstr ""
+
+#: admin/views/settings.php:111
+msgid "Copy"
+msgstr ""
+
+#: admin/views/settings.php:114
+msgid "Your WordPress site URL for the Rext AI integration."
+msgstr ""
+
+#: admin/views/settings.php:120
+msgid "API Key"
+msgstr ""
+
+#: admin/views/settings.php:131
+msgid "Show"
+msgstr ""
+
+#: admin/views/settings.php:137
+msgid "Regenerate"
+msgstr ""
+
+#: admin/views/settings.php:141
+msgid "Use this API key to authenticate requests from Rext AI."
+msgstr ""
+
+#: admin/views/settings.php:147
+msgid "API Endpoint"
+msgstr ""
+
+#: admin/views/settings.php:154
+msgid "The REST API endpoint for Rext AI integration."
+msgstr ""
+
+#: admin/views/settings.php:162
+msgid "Permissions"
+msgstr ""
+
+#: admin/views/settings.php:163
+msgid "Control what actions Rext AI can perform on your site."
+msgstr ""
+
+#: admin/views/settings.php:179
+msgid "SEO Integration"
+msgstr ""
+
+#: admin/views/settings.php:186
+msgid "Detected: %s"
+msgstr ""
+
+#: admin/views/settings.php:192
+msgid "SEO metadata from Rext AI will be automatically saved using this plugin."
+msgstr ""
+
+#: admin/views/settings.php:200
+msgid "Supported SEO plugins:"
+msgstr ""
+
+#: admin/views/settings.php:207
+msgid "Webhooks"
+msgstr ""
+
+#: admin/views/settings.php:208
+msgid "Send notifications to Rext AI when events occur."
+msgstr ""
+
+#: admin/views/settings.php:213
+msgid "Webhook URL"
+msgstr ""
+
+#: admin/views/settings.php:225
+msgid "Test"
+msgstr ""
+
+#: admin/views/settings.php:228
+msgid "The URL where webhook notifications will be sent."
+msgstr ""
+
+#: admin/views/settings.php:234
+msgid "Events"
+msgstr ""
+
+#: admin/views/settings.php:252
+msgid "Quick Start Guide"
+msgstr ""
+
+#: admin/views/settings.php:257
+msgid "Copy your Site URL and API Key from above"
+msgstr ""
+
+#: admin/views/settings.php:261
+msgid "Go to Rext AI and add a new WordPress connection"
+msgstr ""
+
+#: admin/views/settings.php:265
+msgid "Paste your Site URL and API Key in Rext AI"
+msgstr ""
+
+#: admin/views/settings.php:269
+msgid "Start publishing content directly from Rext AI!"
+msgstr ""
+
+#: admin/views/settings.php:275
+msgid "View Documentation"
+msgstr ""
+
+#: admin/views/settings.php:281
+msgid "Save Settings"
+msgstr ""
+
+#: admin/views/logs.php:53
+msgid "All Levels"
+msgstr ""
+
+#: admin/views/logs.php:54
+msgid "Debug"
+msgstr ""
+
+#: admin/views/logs.php:55
+msgid "Info"
+msgstr ""
+
+#: admin/views/logs.php:56
+msgid "Warning"
+msgstr ""
+
+#: admin/views/logs.php:57
+msgid "Error"
+msgstr ""
+
+#: admin/views/logs.php:61
+msgid "All Actions"
+msgstr ""
+
+#: admin/views/logs.php:69
+msgid "Filter"
+msgstr ""
+
+#: admin/views/logs.php:73
+msgid "Clear Filters"
+msgstr ""
+
+#: admin/views/logs.php:80
+msgid "Export CSV"
+msgstr ""
+
+#: admin/views/logs.php:84
+msgid "Clear Logs"
+msgstr ""
+
+#: admin/views/logs.php:93
+msgid "No activity logs found."
+msgstr ""
+
+#: admin/views/logs.php:100
+msgid "Time"
+msgstr ""
+
+#: admin/views/logs.php:101
+msgid "Level"
+msgstr ""
+
+#: admin/views/logs.php:102
+msgid "Action"
+msgstr ""
+
+#: admin/views/logs.php:103
+msgid "Message"
+msgstr ""
+
+#: admin/views/logs.php:104
+msgid "IP Address"
+msgstr ""
+
+#: admin/views/logs.php:105
+msgid "Details"
+msgstr ""
+
+#: admin/views/logs.php:113
+msgid "ago"
+msgstr ""
+
+#: admin/views/logs.php:158
+msgid "Showing %1$d-%2$d of %3$d logs"
+msgstr ""
+
+#: admin/views/logs.php:171
+msgid "Previous"
+msgstr ""
+
+#: admin/views/logs.php:178
+msgid "Page %1$d of %2$d"
+msgstr ""
+
+#: admin/views/logs.php:188
+msgid "Next"
+msgstr ""
+
+#: admin/views/content.php:58
+msgid "All"
+msgstr ""
+
+#: admin/views/content.php:84
+msgid "No content published via Rext AI yet."
+msgstr ""
+
+#: admin/views/content.php:86
+msgid "Content published from Rext AI will appear here."
+msgstr ""
+
+#: admin/views/content.php:93
+msgid "Title"
+msgstr ""
+
+#: admin/views/content.php:94
+msgid "Status"
+msgstr ""
+
+#: admin/views/content.php:95
+msgid "Rext ID"
+msgstr ""
+
+#: admin/views/content.php:96
+msgid "Published"
+msgstr ""
+
+#: admin/views/content.php:97
+msgid "Last Synced"
+msgstr ""
+
+#: admin/views/content.php:98
+msgid "Actions"
+msgstr ""
+
+#: admin/views/content.php:111
+msgid "(Post Deleted)"
+msgstr ""
+
+#: admin/views/content.php:163
+msgid "Showing %1$d-%2$d of %3$d posts"
+msgstr ""
+
+#: admin/views/content.php:177
+msgid "View"
+msgstr ""
+
+#: admin/views/content.php:181
+msgid "Edit"
+msgstr ""

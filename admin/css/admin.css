@@ -1,0 +1,1087 @@
+/**
+ * Rext AI Admin Styles
+ *
+ * Modern, accessible admin interface following WordPress.org design guidelines.
+ *
+ * @package Rext_AI
+ * @since 1.0.0
+ */
+
+/* ==========================================================================
+   CSS Variables - Design Tokens
+   ========================================================================== */
+
+:root {
+    /* Brand Colors */
+    --rext-primary: #2563eb;
+    --rext-primary-hover: #1d4ed8;
+    --rext-primary-light: #dbeafe;
+    --rext-primary-dark: #1e40af;
+
+    /* Semantic Colors */
+    --rext-success: #16a34a;
+    --rext-success-light: #dcfce7;
+    --rext-success-dark: #166534;
+
+    --rext-warning: #d97706;
+    --rext-warning-light: #fef3c7;
+    --rext-warning-dark: #92400e;
+
+    --rext-error: #dc2626;
+    --rext-error-light: #fee2e2;
+    --rext-error-dark: #991b1b;
+
+    --rext-info: #0284c7;
+    --rext-info-light: #e0f2fe;
+    --rext-info-dark: #075985;
+
+    /* Neutral Colors */
+    --rext-white: #ffffff;
+    --rext-gray-50: #f9fafb;
+    --rext-gray-100: #f3f4f6;
+    --rext-gray-200: #e5e7eb;
+    --rext-gray-300: #d1d5db;
+    --rext-gray-400: #9ca3af;
+    --rext-gray-500: #6b7280;
+    --rext-gray-600: #4b5563;
+    --rext-gray-700: #374151;
+    --rext-gray-800: #1f2937;
+    --rext-gray-900: #111827;
+
+    /* Spacing */
+    --rext-spacing-xs: 4px;
+    --rext-spacing-sm: 8px;
+    --rext-spacing-md: 16px;
+    --rext-spacing-lg: 24px;
+    --rext-spacing-xl: 32px;
+
+    /* Border Radius */
+    --rext-radius-sm: 4px;
+    --rext-radius-md: 6px;
+    --rext-radius-lg: 8px;
+    --rext-radius-xl: 12px;
+    --rext-radius-full: 9999px;
+
+    /* Shadows */
+    --rext-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --rext-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    --rext-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --rext-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+    /* Typography */
+    --rext-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --rext-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+    /* Transitions */
+    --rext-transition-fast: 150ms ease;
+    --rext-transition-normal: 200ms ease;
+    --rext-transition-slow: 300ms ease;
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+.rext-ai-admin {
+    max-width: 1200px;
+    font-family: var(--rext-font-sans);
+}
+
+.rext-ai-admin *,
+.rext-ai-admin *::before,
+.rext-ai-admin *::after {
+    box-sizing: border-box;
+}
+
+.rext-ai-admin h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--rext-gray-900);
+    margin: 0 0 var(--rext-spacing-lg) 0;
+    line-height: 1.3;
+}
+
+.rext-ai-admin h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--rext-gray-800);
+    margin: 0 0 var(--rext-spacing-md) 0;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   Card Component
+   ========================================================================== */
+
+.rext-ai-card {
+    background: var(--rext-white);
+    border: 1px solid var(--rext-gray-200);
+    border-radius: var(--rext-radius-lg);
+    padding: var(--rext-spacing-lg);
+    margin-bottom: var(--rext-spacing-lg);
+    box-shadow: var(--rext-shadow-sm);
+    transition: box-shadow var(--rext-transition-normal);
+}
+
+.rext-ai-card:hover {
+    box-shadow: var(--rext-shadow);
+}
+
+.rext-ai-card h2 {
+    display: flex;
+    align-items: center;
+    gap: var(--rext-spacing-sm);
+    padding-bottom: var(--rext-spacing-md);
+    border-bottom: 1px solid var(--rext-gray-100);
+    margin-bottom: var(--rext-spacing-lg);
+}
+
+.rext-ai-card h2 .dashicons {
+    color: var(--rext-primary);
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.rext-ai-card__description {
+    color: var(--rext-gray-500);
+    margin-bottom: var(--rext-spacing-lg);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.rext-ai-card--guide {
+    background: linear-gradient(135deg, var(--rext-primary-light) 0%, var(--rext-white) 50%);
+    border-color: var(--rext-primary);
+    border-left-width: 4px;
+}
+
+.rext-ai-card--guide h2 {
+    color: var(--rext-primary-dark);
+}
+
+/* ==========================================================================
+   Connection Status Banner
+   ========================================================================== */
+
+.rext-ai-status {
+    display: flex;
+    align-items: center;
+    gap: var(--rext-spacing-md);
+    padding: var(--rext-spacing-md) var(--rext-spacing-lg);
+    border-radius: var(--rext-radius-lg);
+    margin-bottom: var(--rext-spacing-lg);
+    transition: all var(--rext-transition-normal);
+}
+
+.rext-ai-status--connected {
+    background: var(--rext-success-light);
+    border: 1px solid var(--rext-success);
+}
+
+.rext-ai-status--disconnected {
+    background: var(--rext-gray-100);
+    border: 1px solid var(--rext-gray-300);
+}
+
+.rext-ai-status__indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--rext-radius-full);
+    flex-shrink: 0;
+    position: relative;
+}
+
+.rext-ai-status--connected .rext-ai-status__indicator {
+    background: var(--rext-success);
+    animation: rext-pulse 2s infinite;
+}
+
+.rext-ai-status--disconnected .rext-ai-status__indicator {
+    background: var(--rext-gray-400);
+}
+
+@keyframes rext-pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 6px rgba(22, 163, 74, 0);
+    }
+}
+
+.rext-ai-status__text {
+    flex: 1;
+}
+
+.rext-ai-status__text strong {
+    display: block;
+    font-weight: 600;
+    color: var(--rext-gray-800);
+    font-size: 15px;
+}
+
+.rext-ai-status--connected .rext-ai-status__text strong {
+    color: var(--rext-success-dark);
+}
+
+.rext-ai-status__time {
+    font-size: 13px;
+    color: var(--rext-gray-500);
+    margin-top: 2px;
+}
+
+.rext-ai-status__stats {
+    display: flex;
+    gap: var(--rext-spacing-md);
+    font-size: 13px;
+    color: var(--rext-gray-600);
+}
+
+.rext-ai-status__stats span {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--rext-spacing-xs);
+    padding: var(--rext-spacing-xs) var(--rext-spacing-sm);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: var(--rext-radius-sm);
+}
+
+/* ==========================================================================
+   Toggle Switch
+   ========================================================================== */
+
+.rext-ai-toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.rext-ai-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.rext-ai-toggle__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--rext-gray-300);
+    transition: var(--rext-transition-normal);
+    border-radius: var(--rext-radius-full);
+}
+
+.rext-ai-toggle__slider::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--rext-white);
+    transition: var(--rext-transition-normal);
+    border-radius: var(--rext-radius-full);
+    box-shadow: var(--rext-shadow);
+}
+
+.rext-ai-toggle input:focus + .rext-ai-toggle__slider {
+    box-shadow: 0 0 0 2px var(--rext-primary-light);
+}
+
+.rext-ai-toggle input:checked + .rext-ai-toggle__slider {
+    background-color: var(--rext-primary);
+}
+
+.rext-ai-toggle input:checked + .rext-ai-toggle__slider::before {
+    transform: translateX(20px);
+}
+
+/* Accessibility: focus visible */
+.rext-ai-toggle input:focus-visible + .rext-ai-toggle__slider {
+    outline: 2px solid var(--rext-primary);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   API Key Display
+   ========================================================================== */
+
+.rext-ai-api-key-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--rext-spacing-md);
+}
+
+.rext-ai-api-key-display {
+    display: flex;
+    align-items: center;
+}
+
+.rext-ai-api-key-display code {
+    background: var(--rext-gray-50);
+    padding: var(--rext-spacing-sm) var(--rext-spacing-md);
+    border-radius: var(--rext-radius-md);
+    font-family: var(--rext-font-mono);
+    font-size: 13px;
+    min-width: 380px;
+    border: 1px solid var(--rext-gray-200);
+    color: var(--rext-gray-700);
+    letter-spacing: 0.3px;
+}
+
+.rext-ai-api-key-actions {
+    display: flex;
+    gap: var(--rext-spacing-sm);
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Copy Field
+   ========================================================================== */
+
+.rext-ai-copy-field {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--rext-spacing-sm);
+}
+
+.rext-ai-copy-field code {
+    background: var(--rext-gray-50);
+    padding: var(--rext-spacing-sm) var(--rext-spacing-md);
+    border-radius: var(--rext-radius-md);
+    font-family: var(--rext-font-mono);
+    font-size: 13px;
+    border: 1px solid var(--rext-gray-200);
+    color: var(--rext-gray-700);
+}
+
+/* ==========================================================================
+   Permissions Grid
+   ========================================================================== */
+
+.rext-ai-permissions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--rext-spacing-md);
+}
+
+.rext-ai-permission {
+    display: flex;
+    align-items: center;
+    gap: var(--rext-spacing-sm);
+    padding: var(--rext-spacing-md);
+    background: var(--rext-gray-50);
+    border: 2px solid var(--rext-gray-200);
+    border-radius: var(--rext-radius-md);
+    cursor: pointer;
+    transition: all var(--rext-transition-fast);
+}
+
+.rext-ai-permission:hover {
+    border-color: var(--rext-primary);
+    background: var(--rext-white);
+}
+
+.rext-ai-permission:focus-within {
+    border-color: var(--rext-primary);
+    box-shadow: 0 0 0 3px var(--rext-primary-light);
+}
+
+.rext-ai-permission input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--rext-primary);
+    cursor: pointer;
+}
+
+.rext-ai-permission input:checked ~ .rext-ai-permission__label {
+    color: var(--rext-primary-dark);
+    font-weight: 500;
+}
+
+.rext-ai-permission__label {
+    font-size: 14px;
+    color: var(--rext-gray-700);
+    user-select: none;
+}
+
+/* ==========================================================================
+   Notice Styles
+   ========================================================================== */
+
+.rext-ai-notice {
+    display: flex;
+    align-items: center;
+    gap: var(--rext-spacing-sm);
+    padding: var(--rext-spacing-md);
+    border-radius: var(--rext-radius-md);
+    margin-bottom: var(--rext-spacing-md);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.rext-ai-notice .dashicons {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+}
+
+.rext-ai-notice--success {
+    background: var(--rext-success-light);
+    color: var(--rext-success-dark);
+    border: 1px solid var(--rext-success);
+}
+
+.rext-ai-notice--success .dashicons {
+    color: var(--rext-success);
+}
+
+.rext-ai-notice--info {
+    background: var(--rext-info-light);
+    color: var(--rext-info-dark);
+    border: 1px solid var(--rext-info);
+}
+
+.rext-ai-notice--info .dashicons {
+    color: var(--rext-info);
+}
+
+.rext-ai-notice--warning {
+    background: var(--rext-warning-light);
+    color: var(--rext-warning-dark);
+    border: 1px solid var(--rext-warning);
+}
+
+.rext-ai-notice--warning .dashicons {
+    color: var(--rext-warning);
+}
+
+.rext-ai-notice--error {
+    background: var(--rext-error-light);
+    color: var(--rext-error-dark);
+    border: 1px solid var(--rext-error);
+}
+
+.rext-ai-notice--error .dashicons {
+    color: var(--rext-error);
+}
+
+/* ==========================================================================
+   Quick Start Steps
+   ========================================================================== */
+
+.rext-ai-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rext-ai-steps li {
+    display: flex;
+    align-items: center;
+    gap: var(--rext-spacing-md);
+    padding: var(--rext-spacing-md) 0;
+    border-bottom: 1px solid var(--rext-gray-100);
+}
+
+.rext-ai-steps li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.rext-ai-steps li:first-child {
+    padding-top: 0;
+}
+
+.rext-ai-step__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--rext-primary);
+    color: var(--rext-white);
+    border-radius: var(--rext-radius-full);
+    font-size: 14px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.rext-ai-step__text {
+    font-size: 14px;
+    color: var(--rext-gray-700);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Toast Notification
+   ========================================================================== */
+
+.rext-ai-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--rext-gray-800);
+    color: var(--rext-white);
+    padding: var(--rext-spacing-md) var(--rext-spacing-lg);
+    border-radius: var(--rext-radius-md);
+    box-shadow: var(--rext-shadow-lg);
+    z-index: 100000;
+    font-size: 14px;
+    font-weight: 500;
+    animation: rext-toast-in var(--rext-transition-slow) ease;
+}
+
+.rext-ai-toast--success {
+    background: var(--rext-success);
+}
+
+.rext-ai-toast--error {
+    background: var(--rext-error);
+}
+
+@keyframes rext-toast-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Logs Page Styles
+   ========================================================================== */
+
+/* Toolbar */
+.rext-ai-logs-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--rext-spacing-md);
+    flex-wrap: wrap;
+    gap: var(--rext-spacing-md);
+}
+
+.rext-ai-logs-filters {
+    display: flex;
+    gap: var(--rext-spacing-sm);
+    align-items: center;
+}
+
+.rext-ai-filter-select {
+    min-width: 160px;
+}
+
+.rext-ai-logs-actions {
+    display: flex;
+    gap: var(--rext-spacing-sm);
+}
+
+.rext-ai-logs-actions .dashicons {
+    vertical-align: middle;
+    margin-right: var(--rext-spacing-xs);
+}
+
+/* Logs Table */
+.rext-ai-logs-table {
+    margin-top: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.rext-ai-logs-table th {
+    font-weight: 600;
+    color: var(--rext-gray-700);
+    background: var(--rext-gray-50);
+}
+
+.rext-ai-logs-table td {
+    vertical-align: middle;
+}
+
+.rext-ai-log-time {
+    font-size: 13px;
+    color: var(--rext-gray-500);
+    white-space: nowrap;
+}
+
+/* Level Badges */
+.rext-ai-level-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--rext-spacing-xs) var(--rext-spacing-sm);
+    border-radius: var(--rext-radius-sm);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rext-ai-level--debug {
+    background: var(--rext-gray-100);
+    color: var(--rext-gray-600);
+}
+
+.rext-ai-level--info {
+    background: var(--rext-info-light);
+    color: var(--rext-info-dark);
+}
+
+.rext-ai-level--warning {
+    background: var(--rext-warning-light);
+    color: var(--rext-warning-dark);
+}
+
+.rext-ai-level--error {
+    background: var(--rext-error-light);
+    color: var(--rext-error-dark);
+}
+
+/* Action Code */
+.rext-ai-action-code {
+    font-family: var(--rext-font-mono);
+    font-size: 12px;
+    background: var(--rext-gray-100);
+    padding: 2px 6px;
+    border-radius: var(--rext-radius-sm);
+    color: var(--rext-gray-700);
+}
+
+/* Toggle Data Button */
+.rext-ai-toggle-data {
+    padding: var(--rext-spacing-xs) var(--rext-spacing-sm) !important;
+    min-width: 36px;
+}
+
+.rext-ai-toggle-data .dashicons {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    transition: transform var(--rext-transition-fast);
+}
+
+.rext-ai-toggle-data.active .dashicons {
+    transform: rotate(180deg);
+}
+
+/* Log Data Row */
+.rext-ai-log-data-row td {
+    padding: 0 !important;
+    background: var(--rext-gray-50);
+}
+
+.rext-ai-log-data {
+    padding: var(--rext-spacing-md);
+    background: var(--rext-gray-900);
+    margin: var(--rext-spacing-sm);
+    border-radius: var(--rext-radius-md);
+    overflow-x: auto;
+}
+
+.rext-ai-log-data pre {
+    margin: 0;
+    color: #e5e7eb;
+    font-family: var(--rext-font-mono);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Empty State */
+.rext-ai-empty-state {
+    text-align: center;
+    padding: var(--rext-spacing-xl) var(--rext-spacing-lg);
+    color: var(--rext-gray-500);
+}
+
+.rext-ai-empty-state .dashicons {
+    font-size: 56px;
+    width: 56px;
+    height: 56px;
+    color: var(--rext-gray-300);
+    margin-bottom: var(--rext-spacing-md);
+}
+
+.rext-ai-empty-state p {
+    margin: var(--rext-spacing-sm) 0;
+    font-size: 14px;
+}
+
+.rext-ai-empty-state p:first-of-type {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--rext-gray-700);
+}
+
+/* ==========================================================================
+   Content Page Styles
+   ========================================================================== */
+
+/* Status Filters */
+.rext-ai-status-filters {
+    margin-bottom: 0;
+}
+
+/* Status Badges */
+.rext-ai-status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--rext-spacing-xs) var(--rext-spacing-sm);
+    border-radius: var(--rext-radius-sm);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.rext-ai-status-badge--publish {
+    background: var(--rext-success-light);
+    color: var(--rext-success-dark);
+}
+
+.rext-ai-status-badge--draft {
+    background: var(--rext-gray-100);
+    color: var(--rext-gray-600);
+}
+
+.rext-ai-status-badge--pending {
+    background: var(--rext-warning-light);
+    color: var(--rext-warning-dark);
+}
+
+.rext-ai-status-badge--private {
+    background: #fce7f3;
+    color: #9d174d;
+}
+
+.rext-ai-status-badge--future {
+    background: var(--rext-primary-light);
+    color: var(--rext-primary-dark);
+}
+
+.rext-ai-status-badge--trash,
+.rext-ai-status-badge--deleted {
+    background: var(--rext-error-light);
+    color: var(--rext-error-dark);
+}
+
+/* Rext ID */
+.rext-ai-rext-id {
+    font-family: var(--rext-font-mono);
+    font-size: 11px;
+    word-break: break-all;
+    color: var(--rext-gray-500);
+}
+
+/* Deleted Post */
+.rext-ai-deleted-post {
+    color: var(--rext-gray-400);
+    font-style: italic;
+}
+
+/* No Actions/Data */
+.rext-ai-no-actions,
+.rext-ai-no-data,
+.rext-ai-not-published {
+    color: var(--rext-gray-300);
+}
+
+/* Content Table Actions */
+.rext-ai-content-table .button-small {
+    padding: 2px var(--rext-spacing-sm) !important;
+}
+
+.rext-ai-content-table .button-small .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.rext-ai-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--rext-spacing-md) 0;
+    border-top: 1px solid var(--rext-gray-200);
+    margin-top: var(--rext-spacing-md);
+}
+
+.rext-ai-pagination__info {
+    font-size: 13px;
+    color: var(--rext-gray-500);
+}
+
+.rext-ai-pagination__links {
+    display: flex;
+    align-items: center;
+    gap: var(--rext-spacing-md);
+}
+
+.rext-ai-pagination__current {
+    font-size: 13px;
+    color: var(--rext-gray-600);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Button Enhancements
+   ========================================================================== */
+
+.rext-ai-admin .button {
+    border-radius: var(--rext-radius-md);
+    transition: all var(--rext-transition-fast);
+}
+
+.rext-ai-admin .button-primary {
+    background: var(--rext-primary);
+    border-color: var(--rext-primary);
+    text-shadow: none;
+}
+
+.rext-ai-admin .button-primary:hover,
+.rext-ai-admin .button-primary:focus {
+    background: var(--rext-primary-hover);
+    border-color: var(--rext-primary-hover);
+}
+
+.rext-ai-admin .button-secondary {
+    border-color: var(--rext-gray-300);
+}
+
+.rext-ai-admin .button-secondary:hover {
+    border-color: var(--rext-gray-400);
+    background: var(--rext-gray-50);
+}
+
+.rext-ai-regenerate-btn {
+    color: var(--rext-error) !important;
+    border-color: var(--rext-error) !important;
+}
+
+.rext-ai-regenerate-btn:hover {
+    background: var(--rext-error-light) !important;
+    color: var(--rext-error-dark) !important;
+}
+
+/* Copy Button State */
+.rext-ai-copy-btn.copied {
+    background: var(--rext-success-light);
+    border-color: var(--rext-success);
+    color: var(--rext-success-dark);
+}
+
+/* ==========================================================================
+   Form Table Adjustments
+   ========================================================================== */
+
+.rext-ai-admin .form-table th {
+    width: 200px;
+    padding-left: 0;
+    font-weight: 500;
+    color: var(--rext-gray-700);
+    vertical-align: top;
+    padding-top: var(--rext-spacing-md);
+}
+
+.rext-ai-admin .form-table td {
+    padding-left: 0;
+}
+
+.rext-ai-admin .form-table .description {
+    font-size: 13px;
+    color: var(--rext-gray-500);
+    margin-top: var(--rext-spacing-sm);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   External Link
+   ========================================================================== */
+
+.button-link .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-left: var(--rext-spacing-xs);
+}
+
+.rext-ai-admin a.button-link {
+    color: var(--rext-primary);
+    text-decoration: none;
+}
+
+.rext-ai-admin a.button-link:hover {
+    color: var(--rext-primary-hover);
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+@media screen and (max-width: 782px) {
+    .rext-ai-admin h1 {
+        font-size: 24px;
+    }
+
+    .rext-ai-status {
+        flex-wrap: wrap;
+    }
+
+    .rext-ai-status__stats {
+        width: 100%;
+        margin-top: var(--rext-spacing-sm);
+        padding-top: var(--rext-spacing-sm);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .rext-ai-api-key-display code {
+        min-width: auto;
+        font-size: 11px;
+        word-break: break-all;
+    }
+
+    .rext-ai-api-key-actions {
+        flex-wrap: wrap;
+    }
+
+    .rext-ai-permissions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rext-ai-logs-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .rext-ai-logs-filters {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .rext-ai-logs-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .rext-ai-pagination {
+        flex-direction: column;
+        gap: var(--rext-spacing-md);
+        text-align: center;
+    }
+
+    .rext-ai-card {
+        padding: var(--rext-spacing-md);
+    }
+
+    .rext-ai-admin .form-table th {
+        width: auto;
+        display: block;
+        padding-bottom: var(--rext-spacing-sm);
+    }
+
+    .rext-ai-admin .form-table td {
+        display: block;
+        padding-left: 0;
+    }
+}
+
+/* ==========================================================================
+   WordPress Admin Compatibility
+   ========================================================================== */
+
+/* Ensure our styles don't conflict with WordPress core */
+.rext-ai-admin .wp-list-table {
+    border: 1px solid var(--rext-gray-200);
+    border-radius: var(--rext-radius-md);
+    overflow: hidden;
+}
+
+.rext-ai-admin .wp-list-table thead th {
+    border-bottom: 1px solid var(--rext-gray-200);
+}
+
+.rext-ai-admin .wp-list-table tbody tr:hover td {
+    background: var(--rext-gray-50);
+}
+
+/* Submit Button Styling */
+.rext-ai-admin .submit {
+    padding-top: var(--rext-spacing-lg);
+    border-top: 1px solid var(--rext-gray-200);
+    margin-top: var(--rext-spacing-lg);
+}
+
+.rext-ai-admin .submit .button-primary {
+    padding: var(--rext-spacing-sm) var(--rext-spacing-lg);
+    font-size: 14px;
+    height: auto;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    .rext-ai-toast,
+    .rext-ai-logs-actions,
+    .rext-ai-api-key-actions,
+    .rext-ai-copy-btn {
+        display: none !important;
+    }
+
+    .rext-ai-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+}
+
+/* ==========================================================================
+   High Contrast Mode Support
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+    .rext-ai-card {
+        border-width: 2px;
+    }
+
+    .rext-ai-toggle__slider {
+        border: 2px solid var(--rext-gray-600);
+    }
+
+    .rext-ai-permission {
+        border-width: 2px;
+    }
+
+    .rext-ai-notice {
+        border-width: 2px;
+    }
+}
+
+/* ==========================================================================
+   Reduced Motion Support
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
